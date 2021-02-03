@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main()
+{
+	int a[20],n,i,j,max,temp,m,k,temp1;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	max=a[0];
+	//sorting the given array
+	for(i=0;i<n;i++)
+	{
+		for(j=i+1;j<n;j++)
+		{
+			if(a[i]>a[j])
+			{
+				temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+	m=0;
+	k=n-1;
+	for(i=0;i<n;i++)
+	{
+		if(m<k)
+		{
+		printf("%d",a[k]);
+		printf("%d",a[m]);
+		}
+		if(m==k)
+		{
+			printf("%d",a[m]);
+		}
+		m++;
+		k--;
+	}
+}
